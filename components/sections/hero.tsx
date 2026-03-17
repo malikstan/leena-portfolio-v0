@@ -67,7 +67,7 @@ export function Hero() {
               variants={itemVariants}
               className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
             >
-              {"Hi, I'm Leena"} <span className="inline-block animate-[wave_2s_ease-in-out_infinite]">{"👋"}</span>
+              {"Hi, I'm Leena"}
             </motion.h1>
 
             <motion.p
@@ -155,13 +155,7 @@ export function Hero() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes wave {
-          0%, 100% { transform: rotate(0deg); }
-          25% { transform: rotate(20deg); }
-          75% { transform: rotate(-10deg); }
-        }
-      `}</style>
+
     </section>
   );
 }

@@ -1,37 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Code2,
+  Coffee,
+  Database,
+  Sparkles,
+  Bot,
+  Brain,
+  MessageSquare,
+  Eye,
+  Link,
+  BookOpen,
+  Users,
+  BarChart3,
+  Lightbulb,
+  RefreshCw,
+  Handshake,
+} from "lucide-react";
 
 const skillCategories = [
   {
     name: "Programming",
     skills: [
-      { name: "Python", icon: "🐍" },
-      { name: "Java", icon: "☕" },
-      { name: "SQL", icon: "🗃️" },
+      { name: "Python", icon: Code2 },
+      { name: "Java", icon: Coffee },
+      { name: "SQL", icon: Database },
     ],
   },
   {
     name: "AI/ML",
     skills: [
-      { name: "Generative AI", icon: "✨" },
-      { name: "Transformers", icon: "🤖" },
-      { name: "LLMs", icon: "🧠" },
-      { name: "NLP", icon: "💬" },
-      { name: "Computer Vision", icon: "👁️" },
-      { name: "LangChain", icon: "🔗" },
-      { name: "RAG", icon: "📚" },
-      { name: "AI Agents", icon: "🤝" },
+      { name: "Generative AI", icon: Sparkles },
+      { name: "Transformers", icon: Bot },
+      { name: "LLMs", icon: Brain },
+      { name: "NLP", icon: MessageSquare },
+      { name: "Computer Vision", icon: Eye },
+      { name: "LangChain", icon: Link },
+      { name: "RAG", icon: BookOpen },
+      { name: "AI Agents", icon: Handshake },
     ],
   },
   {
     name: "Other",
     skills: [
-      { name: "Data Analysis", icon: "📊" },
-      { name: "Team Leadership", icon: "👥" },
-      { name: "Collaboration", icon: "🤝" },
-      { name: "Problem Solving", icon: "💡" },
-      { name: "Adaptability", icon: "🔄" },
+      { name: "Data Analysis", icon: BarChart3 },
+      { name: "Team Leadership", icon: Users },
+      { name: "Collaboration", icon: Handshake },
+      { name: "Problem Solving", icon: Lightbulb },
+      { name: "Adaptability", icon: RefreshCw },
     ],
   },
 ];
@@ -96,19 +113,22 @@ export function Skills() {
                 viewport={{ once: true }}
                 className="flex flex-wrap justify-center gap-3 md:justify-start"
               >
-                {category.skills.map((skill) => (
-                  <motion.div
-                    key={skill.name}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    className="glass-card flex items-center gap-2 rounded-full px-4 py-2.5 transition-shadow hover:shadow-lg"
-                  >
-                    <span className="text-lg">{skill.icon}</span>
-                    <span className="text-sm font-medium text-foreground">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
+                {category.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="glass-card flex items-center gap-2 rounded-full px-4 py-2.5 transition-shadow hover:shadow-lg"
+                    >
+                      <Icon size={18} className="text-primary" />
+                      <span className="text-sm font-medium text-foreground">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </motion.div>
           ))}

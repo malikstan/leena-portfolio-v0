@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -13,9 +14,10 @@ export function Footer() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-sm text-muted-foreground">
+          <p className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
             Designed and coded with{" "}
-            <span className="text-red-500">{"❤"}</span> by Leena Alotaibi
+            <Heart size={14} className="fill-red-500 text-red-500" /> by Leena
+            Alotaibi
           </p>
         </motion.div>
       </div>
